@@ -1,0 +1,202 @@
+/* 🔹 Header */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255, 248, 240, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
+}
+
+/* 🔹 Container */
+.header-container {
+  width: 100%;
+  padding: 16px clamp(20px, 6vw, 80px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================= */
+/* 🔥 LOGO + PILL FIX */
+/* ========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Text */
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.highlight {
+  color: #e76f51;
+}
+
+/* 🔹 Pill container */
+.pill-icon {
+  height: 30px;   /* 🔥 IMPORTANT */
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Pill */
+.pill {
+  height: 100%;
+  width: 14px;   /* 🔥 ensures visibility */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(180deg);
+  animation: spin 4s linear infinite;
+}
+
+/* 🔹 Spin animation */
+@keyframes spin {
+  100% {
+    transform: rotate(-540deg);
+  }
+}
+
+/* 🔹 Pill halves */
+.pill .side {
+  width: 100%;
+  height: 50%;
+  border-radius: 999px 999px 0 0;
+  background: #f7c340;
+  position: relative;
+  overflow: hidden;
+}
+
+.pill .side + .side {
+  background: #d9680c;
+  border-radius: 0 0 999px 999px;
+  border-top: 2px solid #621e1a;
+  animation: open 2s ease-in-out infinite;
+}
+
+/* 🔹 Open animation */
+@keyframes open {
+  30%, 70% {
+    margin-top: 20%;
+  }
+}
+
+/* 🔹 Shine */
+.pill .side:before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 80%;
+  bottom: 0;
+  right: 10%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  animation: shine 1s ease-out infinite alternate;
+}
+
+.pill .side + .side:before {
+  top: 0;
+  bottom: auto;
+}
+
+/* 🔹 Shine animation */
+@keyframes shine {
+  0% { right: 10%; }
+  100% { right: 40%; }
+}
+
+/* 🔹 Shadow */
+.pill .side:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px 999px 0 0;
+  border: 2px solid rgba(0,0,0,0.1);
+  border-bottom: none;
+}
+
+.pill .side + .side:after {
+  border-radius: 0 0 999px 999px;
+  border-top: none;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+/* 🔹 Medicine particles */
+.medicine {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+}
+
+.medicine i {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #47c;
+  border-radius: 50%;
+  animation: dust 2s infinite alternate;
+}
+
+/* 🔹 Dust animation */
+@keyframes dust {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+/* ========================= */
+/* 🔹 NAV */
+/* ========================= */
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #5a5a5a;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+/* ========================= */
+/* 🔹 BUTTON */
+/* ========================= */
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #e76f51;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #d65a3b;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
