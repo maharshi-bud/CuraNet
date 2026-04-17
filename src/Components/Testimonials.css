@@ -19,26 +19,28 @@
 /* CAROUSEL */
 .carousel {
   overflow: hidden;
-  position: relative;
+  width: 100%;
 }
 
 /* TRACK */
 .carousel-track {
   display: flex;
-  gap: 30px;
-  width: max-content;
+  gap: 24px;
 
-  animation: scroll 30s linear infinite;
+  animation: scroll 45s linear infinite;
+  width: max-content;
 }
 
-/* PAUSE ON HOVER */
+/* PAUSE */
 .carousel:hover .carousel-track {
   animation-play-state: paused;
 }
 
 /* CARD */
 .card {
+  flex: 0 0 auto;   /* 🔥 IMPORTANT */
   width: 280px;
+
   background: white;
   border-radius: 16px;
   padding: 20px;
@@ -60,8 +62,8 @@
 /* TOP */
 .card-top {
   display: flex;
-  align-items: center;
   gap: 12px;
+  align-items: center;
 }
 
 /* AVATAR */
@@ -79,50 +81,19 @@
   font-weight: bold;
 }
 
-/* NAME */
-.name {
-  font-weight: 600;
-  color: #1e293b;
-}
-
-/* ROLE */
-.role {
-  font-size: 13px;
-  color: #64748b;
-}
-
-/* STARS */
-.stars {
-  color: #1f8a78;
-}
-
 /* TEXT */
-.text {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.6;
-}
+.name { font-weight: 600; color: #1e293b; }
+.role { font-size: 13px; color: #64748b; }
+.stars { color: #1f8a78; }
+.text { font-size: 14px; color: #475569; }
+.read { color: #1f8a78; cursor: pointer; }
 
-/* READ */
-.read {
-  color: #1f8a78;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* ANIMATION */
+/* 🔥 SMOOTH LOOP */
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .card {
-    width: 240px;
   }
 }

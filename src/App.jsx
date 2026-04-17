@@ -3,9 +3,10 @@ import "./App.css";
 import Header from "./Components/Hearder";
 import Hero from "./Components/Hero";
 import HowItWorks from "./Components/HowItWorks";
-
+import Testimonials  from "./Components/Testimonials";
 
 import WhyUs from "./Components/WhyUs"
+// import Testimonials from "./Components/Testimonials";
 function App() {
   return (
     <div className="app">
@@ -15,6 +16,7 @@ function App() {
       <Hero/>
       <WhyUs/>
       <HowItWorks/>
+      <Testimonials/>
     </div>
   );
 }

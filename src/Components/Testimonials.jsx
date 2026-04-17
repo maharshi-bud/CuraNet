@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card2 from "./Card"; // make sure this path is correct
 import "./testimonials.css";
 
 const reviews = [
@@ -14,27 +14,6 @@ const reviews = [
   { name: "Chris Evans", role: "Specialist", text: "Saves a lot of time." },
   { name: "Neha Verma", role: "Doctor", text: "Highly recommended for clinics." },
 ];
-const Card = ({ name, role, text }) => {
-  return (
-    <div className="card">
-      <div className="card-top">
-        <div className="avatar">
-          {name.split(" ").map(n => n[0]).join("")}
-        </div>
-        <div>
-          <div className="name">{name}</div>
-          <div className="role">{role}</div>
-        </div>
-      </div>
-
-      <div className="stars">★★★★★</div>
-
-      <p className="text">{text}</p>
-
-      <div className="read">Read more</div>
-    </div>
-  );
-};
 
 function Testimonials() {
   return (
@@ -45,13 +24,16 @@ function Testimonials() {
       </h2>
 
       <div className="carousel">
-
         <div className="carousel-track">
           {[...reviews, ...reviews].map((review, index) => (
-            <Card key={index} {...review} />
+            <Card2
+              key={index}
+              name={review.name}
+              role={review.role}
+              text={review.text}
+            />
           ))}
         </div>
-
       </div>
 
     </section>
