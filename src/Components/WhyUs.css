@@ -59,7 +59,8 @@
 /* 🔥 Hover */
 .why-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  scale: 1.1    ;
 }
 
 /* 📱 Responsive */

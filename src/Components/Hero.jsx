@@ -38,7 +38,7 @@ function Hero() {
           </p>
           </div>
 
-          <button class="button">Read More</button>
+          <button class="button2">Read More</button>
 
         
         </div>

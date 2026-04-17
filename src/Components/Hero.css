@@ -251,7 +251,7 @@ margin-top: 10vh;
 }
 
 /* From Uiverse.io by vikiWayne */ 
-.button {
+.button2 {
     /* z-index: 5; */
   padding: 0.7em 1em;
   margin-right: 15px;
@@ -269,14 +269,14 @@ margin-top: 10vh;
   outline: 2px solid #2c9caf;
 }
 
-button:hover {
+.button2:hover {
   color: #ffffff;
   transform: scale(1.1);
   outline: 2px solid #70bdca;
   box-shadow: 4px 5px 17px -4px #268391;
 }
 
-button::before {
+.button2::before {
   content: "";
   position: absolute;
   left: -50px;
@@ -289,6 +289,6 @@ button::before {
   transition: width 1000ms;
 }
 
-button:hover::before {
+.button2:hover::before {
   width: 250%;
 }

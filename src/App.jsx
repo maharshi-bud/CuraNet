@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./Components/Hearder";
 import Hero from "./Components/Hero";
+import HowItWorks from "./Components/HowItWorks";
 
 import WhyUs from "./Components/WhyUs"
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Hero/>
       <WhyUs/>
+      <HowItWorks/>
     </div>
   );
 }
