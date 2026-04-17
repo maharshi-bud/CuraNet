@@ -1,0 +1,128 @@
+/* SECTION */
+.testimonials {
+  width: min(95%, 1300px);
+  margin: 100px auto;
+}
+
+/* TITLE */
+.test-title {
+  text-align: center;
+  font-size: clamp(28px, 3vw, 44px);
+  margin-bottom: 50px;
+  color: #1e293b;
+}
+
+.test-title span {
+  color: #1f8a78;
+}
+
+/* CAROUSEL */
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: scroll 30s linear infinite;
+}
+
+/* PAUSE ON HOVER */
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* CARD */
+.card {
+  width: 280px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+
+  border: 1px solid #e2e8f0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* TOP */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  background: #1f8a78;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* NAME */
+.name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ROLE */
+.role {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* STARS */
+.stars {
+  color: #1f8a78;
+}
+
+/* TEXT */
+.text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* READ */
+.read {
+  color: #1f8a78;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .card {
+    width: 240px;
+  }
+}
