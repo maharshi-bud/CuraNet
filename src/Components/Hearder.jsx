@@ -10,10 +10,6 @@ function Header() {
         {/* 🔹 Logo + Pill */}
         {/* <div className="logo"> */}
 <div className="logo">
-  <span className="logo-text">
-    Cura<span className="highlight">Net</span>
-  </span>
-
   <div className="pill-icon">
     <div className="pill">
       <div className="medicine">
@@ -23,6 +19,13 @@ function Header() {
       <div className="side"></div>
     </div>
   </div>
+  <span className="logo-text">
+    HOME<span className="highlight">OSUITE</span>
+  </span>
+
+  
+
+
 </div>
 
         {/* 🔹 Nav */}

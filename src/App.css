@@ -1,4 +1,13 @@
 /* Reset */
+:root {
+  --bg-main: #f6f8fb;
+  --bg-card: #ffffff;
+  --primary: #1f8a78;      /* teal green */
+  --primary-dark: #176d5f;
+  --text-main: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +18,9 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background: radial-gradient(circle at top, #ffffff, antiquewhite 70%);
-  color: white;
+ 
+}
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
 }
