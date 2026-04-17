@@ -1,32 +1,21 @@
 import React from "react";
 import "./Header.css";
+import { Stethoscope, User, Calendar } from "lucide-react";
 
 function Header() {
   return (
     <header className="header">
-      
+
       <div className="header-container">
 
-        {/* 🔹 Logo + Pill */}
-        {/* <div className="logo"> */}
-<div className="logo">
-  <div className="pill-icon">
-    <div className="pill">
-      <div className="medicine">
-        {[...Array(20)].map((_, i) => <i key={i}></i>)}
-      </div>
-      <div className="side"></div>
-      <div className="side"></div>
-    </div>
-  </div>
-  <span className="logo-text">
-    HOME<span className="highlight">OSUITE</span>
-  </span>
+        {/* 🔹 Logo */}
+        <div className="logo">
+          <Stethoscope size={22} className="logo-icon" />
 
-  
-
-
-</div>
+          <span className="logo-text">
+            HOME<span className="highlight">OSUITE</span>
+          </span>
+        </div>
 
         {/* 🔹 Nav */}
         <nav className="nav">
@@ -36,8 +25,21 @@ function Header() {
           <a href="#">Plans</a>
         </nav>
 
-        {/* 🔹 CTA */}
-        <button className="btn">Book Now</button>
+        {/* 🔹 Right Side */}
+        <div className="header-right">
+
+          <button className="btn">
+            <Calendar size={16} />
+            Book
+          </button>
+
+          <div className="account">
+            {/* <HugeiconsIcon icon={Male02Icon} /> */}
+            {/* <User size={25} /> */}
+            <User size={25} strokeWidth={2} />
+          </div>
+
+        </div>
 
       </div>
     </header>
