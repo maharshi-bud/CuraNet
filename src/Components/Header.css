@@ -155,7 +155,7 @@
   border-radius: 50%;
 
   transition: transform 0.35s ease;
-  easing: cubic-bezier(0.4, 0, 0.2, 1);
+  /* easing: cubic-bezier(0.4, 0, 0.2, 1); */
   z-index: 0;
 }
 

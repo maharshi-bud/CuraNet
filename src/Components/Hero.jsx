@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import img1 from "./img/img1.png"; // 1. Uncomment the import statement
 
-function Hero({gotoBooking}) {
+function Hero({ goToBooking }) {
   return (
     <section className="hero">
 
@@ -40,7 +40,7 @@ function Hero({gotoBooking}) {
           </p>
           </div>
 
-          <button class="button2" type="button" onClick={gotoBooking} >Book Now</button>
+          <button className="button2" type="button" onClick={goToBooking}>Book Now</button>
 
         
         </div>
