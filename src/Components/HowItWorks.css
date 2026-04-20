@@ -4,7 +4,7 @@
 
 .timeline-layout {
   width: min(95%, 1300px);
-  margin: 100px auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 30px;

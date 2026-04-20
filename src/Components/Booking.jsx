@@ -40,11 +40,56 @@ const plans = [
 ];
 
 function Booking({ goHome }) {
+
   const [step, setStep] = useState(1);
   const [plan, setPlan] = useState(null);
   const [payment, setPayment] = useState("card");
   const [timer, setTimer] = useState(180);
   const [processing, setProcessing] = useState(false);
+
+  // ✅ FIXED: moved inside component
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    clinicName: "",
+    specialization: "",
+    experience: ""
+  });
+
+  // ✅ input handler
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // ✅ API call
+  const submitToBackend = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/doctors/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          plan: plans[plan],
+          paymentMethod: payment
+        })
+      });
+
+      const data = await res.json();
+      console.log("Saved:", data);
+
+      next(); // move to confirmation
+    } catch (err) {
+      console.error(err);
+      console.error("not sacved");
+      alert("Error saving data");
+    }
+  };
 
   useEffect(() => {
     if (payment === "upi" && step === 3 && timer > 0) {
@@ -62,26 +107,24 @@ function Booking({ goHome }) {
 
       {/* HERO */}
       <div className="booking-hero">
-      <div className="booking-hero-content">
-        <p className="back" onClick={goHome}>← Back to Home</p>
-        <h1>Get Started with HOMEOSUITE</h1>
-        <p>Set up your professional dashboard and manage patients seamlessly.</p>
-      </div>
-      </div>
-
-<div className="stepper">
-          {["Doctor Info", "Plan", "Payment", "Confirm"].map((l, i) => (
-            <div key={i} className={`step ${step === i + 1 ? "active" : ""}`}>
-              <div className="circle">{i + 1}</div>
-              <span>{l}</span>
-            </div>
-          ))}
+        <div className="booking-hero-content">
+          <p className="back" onClick={goHome}>← Back to Home</p>
+          <h1>Get Started with HOMEOSUITE</h1>
+          <p>Set up your professional dashboard and manage patients seamlessly.</p>
         </div>
+      </div>
+
+      {/* STEPPER */}
+      <div className="stepper">
+        {["Doctor Info", "Plan", "Payment", "Confirm"].map((l, i) => (
+          <div key={i} className={`step ${step === i + 1 ? "active" : ""}`}>
+            <div className="circle">{i + 1}</div>
+            <span>{l}</span>
+          </div>
+        ))}
+      </div>
+
       <div className="booking">
-
-        {/* STEPPER */}
-        
-
         <div className="form-card">
 
           {/* STEP 1 */}
@@ -95,28 +138,28 @@ function Booking({ goHome }) {
               <div className="grid">
                 <div className="field">
                   <label>Full Name *</label>
-                  <input placeholder="Dr. John Doe" />
+                  <input name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Dr. John Doe" />
                 </div>
 
                 <div className="field">
                   <label>Email *</label>
-                  <input placeholder="john@clinic.com" />
+                  <input name="email" value={formData.email} onChange={handleChange} placeholder="john@clinic.com" />
                 </div>
 
                 <div className="field">
                   <label>Phone *</label>
-                  <input placeholder="+91 98765 43210" />
+                  <input name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
                 </div>
 
                 <div className="field">
                   <label>Clinic Name *</label>
-                  <input placeholder="City Care Hospital" />
+                  <input name="clinicName" value={formData.clinicName} onChange={handleChange} placeholder="City Care Hospital" />
                 </div>
 
                 <div className="field">
                   <label>Specialization *</label>
-                  <select>
-                    <option>Select specialization</option>
+                  <select name="specialization" value={formData.specialization} onChange={handleChange}>
+                    <option value="">Select specialization</option>
                     <option>General Physician</option>
                     <option>Cardiologist</option>
                     <option>Dermatologist</option>
@@ -125,7 +168,7 @@ function Booking({ goHome }) {
 
                 <div className="field">
                   <label>Experience</label>
-                  <input placeholder="5 years" />
+                  <input name="experience" value={formData.experience} onChange={handleChange} placeholder="5 years" />
                 </div>
               </div>
             </>
@@ -135,9 +178,6 @@ function Booking({ goHome }) {
           {step === 2 && (
             <>
               <h2>Select a Plan</h2>
-              <p className="section-sub">
-                Choose the plan that fits your practice.
-              </p>
 
               <div className="plans">
                 {plans.map((p, i) => (
@@ -199,9 +239,7 @@ function Booking({ goHome }) {
                     src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi-${Math.random()}`}
                     alt="qr"
                   />
-
                   <p>Scan & Pay</p>
-
                   <div className="timer">
                     Expires in: {Math.floor(timer / 60)}:
                     {String(timer % 60).padStart(2, "0")}
@@ -240,11 +278,15 @@ function Booking({ goHome }) {
                 onClick={() => {
                   if (step === 3) {
                     setProcessing(true);
+
                     setTimeout(() => {
+                      submitToBackend(); // ✅ CONNECTED
                       setProcessing(false);
-                      next();
-                    }, 1500);
-                  } else next();
+                    }, 1200);
+
+                  } else {
+                    next();
+                  }
                 }}
               >
                 {processing ? "Processing..." : step === 3 ? "Confirm Payment" : "Continue"}
