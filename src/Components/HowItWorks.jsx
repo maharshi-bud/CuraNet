@@ -40,9 +40,10 @@ function HowItWorks() {
       });
 
       const progress =
-        (activeIndex / (sections.length - 1)) * 100;
-
-      fill.style.height = `${progress}%`;
+        (activeIndex / (sections.length - 1)) * 70;
+      console.log(progress);
+       const ph = progress/70 *100;
+      fill.style.height = `${ph}%`;
     }
 
     window.addEventListener("scroll", updateTimeline);
@@ -58,7 +59,7 @@ return (
     {/* 🔹 HEADING */}
     <div className="how-header">
       <h2>
-        How <span>HOMEOSUITE</span> Works
+        How <span>Homeosuite</span> Works
       </h2>
       <p>
         A simple and structured approach to managing healthcare workflows,
