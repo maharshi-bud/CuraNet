@@ -4,9 +4,14 @@ import Header from "./Components/Hearder";
 import Hero from "./Components/Hero";
 import HowItWorks from "./Components/HowItWorks";
 import Testimonials  from "./Components/Testimonials";
+import Plans   from "./Components/Plans";
+import WhyUs from "./Components/WhyUs";
+import Footer from "./Components/Footer";
 
-import WhyUs from "./Components/WhyUs"
-// import Testimonials from "./Components/Testimonials";
+
+
+
+
 function App() {
   return (
     <div className="app">
@@ -17,6 +22,8 @@ function App() {
       <WhyUs/>
       <HowItWorks/>
       <Testimonials/>
+      <Plans/>
+      <Footer/>
     </div>
   );
 }

@@ -1,0 +1,152 @@
+/* SECTION */
+.plans {
+  width: min(95%, 1300px);
+  margin: 120px auto;
+}
+
+/* HEADER */
+.plans-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.plans-header h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  color: #1e293b;
+}
+
+.plans-header span {
+  color: #1f8a78;
+}
+
+.plans-header p {
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* GRID */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.plan {
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e2e8f0;
+
+  transition: 0.35s ease;
+  position: relative;
+}
+
+/* INNER */
+.plan .inner {
+  padding: 30px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 18px;
+}
+
+/* PRICING */
+.plan .pricing {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  background: #e0f7f4;
+  color: #1f8a78;
+
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* TITLE */
+.plan .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* INFO */
+.plan .info {
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* FEATURES */
+.plan .features {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan .features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ICON */
+.plan .icon {
+  background: #1f8a78;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* BUTTON */
+.plan .button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1f8a78;
+  color: white;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.plan .button:hover {
+  background: #166f61;
+}
+
+/* 🔥 HOVER EFFECT */
+.plan:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(31,138,120,0.15);
+}
+
+/* 🔥 FEATURED PLAN */
+.plan.featured {
+  border: 2px solid #1f8a78;
+  transform: scale(1.05);
+}
+
+.plan.featured:hover {
+  transform: scale(1.07);
+  box-shadow: 0 30px 80px rgba(31,138,120,0.25);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan.featured {
+    transform: none;
+  }
+}

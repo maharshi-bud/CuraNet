@@ -24,3 +24,11 @@ body {
   background: var(--bg-main);
   color: var(--text-main);
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+* {
+  font-family: 'Inter', sans-serif;
+}
+

@@ -1,0 +1,189 @@
+/* ========================= */
+/* 🔹 FOOTER BASE */
+/* ========================= */
+
+.footer {
+  background: linear-gradient(135deg, #1f8a78, #166f61);
+  color: #e6fffb;
+  margin-top: 100px;
+}
+
+/* ========================= */
+/* 🔹 CONTAINER */
+/* ========================= */
+
+.footer-container {
+  width: min(95%, 1300px);
+  margin: auto;
+  padding: 60px 0;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+/* ========================= */
+/* 🔹 BRAND */
+/* ========================= */
+
+.brand h2 {
+  color: #ffffff;
+}
+
+.brand p {
+  margin: 15px 0;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* 🔹 SOCIALS */
+/* ========================= */
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  /* background: white; */
+  background: rgba(255,255,255,0.1);
+
+  color: #1f8a78;
+  transform: translateY(-3px);
+}
+
+/* ========================= */
+/* 🔹 COLUMNS */
+/* ========================= */
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+/* ========================= */
+/* 🔹 LINKS */
+/* ========================= */
+
+.footer-col a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+/* ========================= */
+/* 🔹 CONTACT */
+/* ========================= */
+
+.contact li {
+  color: rgba(255,255,255,0.75);
+}
+
+/* ========================= */
+/* 🔹 BUTTON */
+/* ========================= */
+
+.contact-btn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+
+  border: none;
+  border-radius: 8px;
+
+  background: white;
+  color: #1f8a78;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ecfdf5;
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* 🔹 BOTTOM */
+/* ========================= */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: 20px 0;
+
+  width: min(95%, 1300px);
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+
+}
+
+/* ========================= */
+/* 🔹 LEGAL */
+/* ========================= */
+
+.legal {
+  display: flex;
+  gap: 20px;
+}
+
+.legal a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+.legal a:hover {
+  color: white;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
