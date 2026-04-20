@@ -103,7 +103,7 @@
   }
 }
 /* 🔵 Circle */
-.circle {
+.circle2 {
   position: absolute;
 
   width: clamp(260px, 30vw, 550px);
@@ -159,7 +159,7 @@
 }
 
 /* Image */
-.circle img {
+.circle2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -243,7 +243,7 @@ margin-top: 10vh;
     text-align: center;
   }
 
-  .circle {
+  .circle2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

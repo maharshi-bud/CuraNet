@@ -15,7 +15,7 @@ function Hero({gotoBooking}) {
 
           <div className="triangle"></div>
 
-          <div className="circle">
+          <div className="circle2">
             {/* 2. Fix 'srci' typo and use the imported variable instead of a string */}
             <img
               src={img1} 

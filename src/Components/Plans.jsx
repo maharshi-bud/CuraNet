@@ -3,16 +3,16 @@ import "./Plans.css";
 
 function Plans({ goToBooking }) {
   return (
-    <section className="plans">
+    <section className="plans2">
 
-      <div className="plans-header">
+      <div className="plans2-header">
         <h2>
           Simple <span>Pricing</span>
         </h2>
         <p>Choose a plan that fits your workflow and scale your healthcare operations.</p>
       </div>
 
-      <div className="plans-grid">
+      <div className="plans2-grid">
 
         {/* BASIC */}
         <div className="plan">
