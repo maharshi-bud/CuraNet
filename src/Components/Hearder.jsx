@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { Stethoscope, User, Calendar } from "lucide-react";
 
-function Header() {
+function Header({ goToBooking }) {
   return (
     <header className="header">
 
@@ -28,7 +28,7 @@ function Header() {
         {/* 🔹 Right Side */}
         <div className="header-right">
 
-          <button className="btn">
+          <button className="btn" type="button" onClick={goToBooking}>
             <Calendar size={16} />
             Book
           </button>

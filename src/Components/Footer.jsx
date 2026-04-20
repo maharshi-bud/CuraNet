@@ -1,8 +1,8 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 // import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 
-function Footer() {
+function Footer({ goToBooking }) {
   return (
     <footer className="footer">
 
@@ -38,7 +38,7 @@ function Footer() {
             <li><a href="#">Home</a></li>
             <li><a href="#">How It Works</a></li>
             <li><a href="#">Pricing Plans</a></li>
-            <li><a href="#">Book Appointment</a></li>
+            <li><a href="#" onClick={(event) => { event.preventDefault(); goToBooking(); }}>Book Appointment</a></li>
             <li><a href="#">Why Choose Us</a></li>
           </ul>
         </div>
@@ -65,7 +65,7 @@ function Footer() {
             <li>123 Health Ave, Med City, CA 94102</li>
           </ul>
 
-          <button className="contact-btn">Book Appointment</button>
+          <button className="contact-btn" type="button" onClick={goToBooking}>Book Appointment</button>
         </div>
 
       </div>

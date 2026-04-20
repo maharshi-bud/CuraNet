@@ -1,7 +1,7 @@
 import React from "react";
-import "./plans.css";
+import "./Plans.css";
 
-function Plans() {
+function Plans({ goToBooking }) {
   return (
     <section className="plans">
 
@@ -29,7 +29,7 @@ function Plans() {
             </ul>
 
             <div className="action">
-              <button className="button">Choose Plan</button>
+              <button className="button" type="button" onClick={goToBooking}>Choose Plan</button>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ function Plans() {
             </ul>
 
             <div className="action">
-              <button className="button">Choose Plan</button>
+              <button className="button" type="button" onClick={goToBooking}>Choose Plan</button>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ function Plans() {
             </ul>
 
             <div className="action">
-              <button className="button">Choose Plan</button>
+              <button className="button" type="button" onClick={goToBooking}>Choose Plan</button>
             </div>
           </div>
         </div>

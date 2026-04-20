@@ -1,0 +1,97 @@
+.booking {
+  width: min(95%, 900px);
+  margin: 80px auto;
+}
+
+/* 🔹 STEPPER */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #94a3b8;
+}
+
+.step.active {
+  color: #1f8a78;
+}
+
+.circle2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step.active .circle2 {
+  background: #1f8a78;
+  color: white;
+}
+
+/* 🔹 FORM CARD */
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+/* 🔹 GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+}
+
+/* 🔹 CONSULT TYPE */
+.consult-type {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.consult-type button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.consult-type .active {
+  border-color: #1f8a78;
+  background: #ecfdf5;
+}
+
+/* 🔹 ACTIONS */
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.primary {
+  background: #1f8a78;
+  color: white;
+}

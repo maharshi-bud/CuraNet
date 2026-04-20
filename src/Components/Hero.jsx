@@ -2,13 +2,15 @@ import React from "react";
 import "./Hero.css";
 import img1 from "./img/img1.png"; // 1. Uncomment the import statement
 
-function Hero() {
+function Hero({gotoBooking}) {
   return (
     <section className="hero">
 
       <div className="hero-container">
 
         {/* 🔷 LEFT VISUAL */}
+
+        
         <div className="hero-visual">
 
           <div className="triangle"></div>
@@ -38,7 +40,7 @@ function Hero() {
           </p>
           </div>
 
-          <button class="button2">Book Now</button>
+          <button class="button2" type="button" onClick={gotoBooking} >Book Now</button>
 
         
         </div>
