@@ -7,6 +7,7 @@ import doctorRoutes from "./routes/doctorRoutes.js";
 
 dotenv.config();
 
+console.log("Starting server...");
 const app = express();
 
 /* 🔗 Connect DB */

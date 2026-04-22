@@ -67,7 +67,14 @@ function Booking({ goHome }) {
 
   // ✅ API call
   const submitToBackend = async () => {
+    console.log (JSON.stringify({
+          ...formData,
+          plan: plans[plan],
+          paymentMethod: payment
+        })
+      )
     try {
+
       const res = await fetch("http://localhost:5000/api/doctors/register", {
         method: "POST",
         headers: {
