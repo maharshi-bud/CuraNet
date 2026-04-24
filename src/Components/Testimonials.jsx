@@ -1,5 +1,5 @@
 import React from "react";
-import Card2 from "./Card"; // make sure this path is correct
+import Card2 from "./card"; // make sure this path is correct
 import "./testimonials.css";
 
 const reviews = [
