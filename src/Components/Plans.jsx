@@ -17,7 +17,7 @@ function Plans({ goToBooking }) {
         {/* BASIC */}
         <div className="plan">
           <div className="inner">
-            <span className="pricing">$19 <small>/ hr</small></span>
+            <span className="pricing">₹499 </span>
 
             <p className="title">Basic</p>
             <p className="info">Perfect for individuals getting started.</p>
@@ -37,7 +37,7 @@ function Plans({ goToBooking }) {
         {/* PRO (FEATURED) */}
         <div className="plan featured">
           <div className="inner">
-            <span className="pricing">$39 <small>/ hr</small></span>
+            <span className="pricing">₹999 </span>
 
             <p className="title">Professional</p>
             <p className="info">Best for clinics and growing teams.</p>
@@ -57,7 +57,7 @@ function Plans({ goToBooking }) {
         {/* ENTERPRISE */}
         <div className="plan">
           <div className="inner">
-            <span className="pricing">$49 <small>/ hr</small></span>
+            <span className="pricing">₹1999 </span>
 
             <p className="title">Enterprise</p>
             <p className="info">Advanced features for large organizations.</p>

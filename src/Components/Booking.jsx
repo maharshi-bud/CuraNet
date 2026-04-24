@@ -6,7 +6,7 @@ import Footer from "./Footer";
 const plans = [
   {
     name: "Starter",
-    price: "₹499/mo",
+    price: "₹499",
     desc: "Perfect for individual doctors starting out",
     features: [
       "Up to 50 patients/month",
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "₹999/mo",
+    price: "₹999",
     desc: "For growing clinics and active practices",
     features: [
       "Unlimited patients",
@@ -28,7 +28,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "₹1999/mo",
+    price: "₹1999",
     desc: "For hospitals & multi-doctor teams",
     features: [
       "Multi-doctor access",
