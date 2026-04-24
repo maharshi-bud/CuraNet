@@ -75,7 +75,7 @@ function Booking({ goHome }) {
       )
     try {
 
-      const res = await fetch("http://localhost:5000/api/doctors/register", {
+      const res = await fetch("/api/doctors/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
