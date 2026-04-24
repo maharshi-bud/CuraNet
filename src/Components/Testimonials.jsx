@@ -1,6 +1,6 @@
 import React from "react";
 import Card2 from "./card"; // make sure this path is correct
-import "./testimonials.css";
+import "./Testimonials.css";
 
 const reviews = [
   { name: "Donald Jackman", role: "Content Creator", text: "Great platform, super easy to use." },
