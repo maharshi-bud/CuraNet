@@ -17,7 +17,7 @@
 /* 🔹 Container */
 .header-container {
   width: 100%;
-  padding: 10px clamp(20px, -95vw, 80px);
+  padding: 10px clamp(90px, -95vw, 80px);
   position: relative;
   display: flex;
   justify-content: space-between;

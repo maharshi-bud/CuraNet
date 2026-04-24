@@ -4,7 +4,7 @@ import img1 from "./img/img1.png"; // 1. Uncomment the import statement
 
 function Hero({ goToBooking }) {
   return (
-    <section className="hero">
+    <section className="hero" id = "home">
 
       <div className="hero-container">
 

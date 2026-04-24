@@ -57,6 +57,8 @@ function Booking({ goHome }) {
     experience: ""
   });
 
+  const [errors, setErrors] = useState({});  // ✅ ADD THIS HERE  
+
   // ✅ input handler
   const handleChange = (e) => {
     setFormData({
@@ -107,10 +109,56 @@ function Booking({ goHome }) {
 
   const next = () => setStep((s) => Math.min(s + 1, 4));
   const prev = () => setStep((s) => Math.max(s - 1, 1));
+  // const goHome = () => setPage("home");
+
+  const validateStep1 = () => {
+  const newErrors = {};
+
+  // Full Name
+  if (!formData.fullName.trim()) {
+    newErrors.fullName = "Full name is required";
+  }
+
+  // Email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    newErrors.email = "Enter a valid email";
+  }
+
+  // Phone (Indian format flexible)
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if (!phoneRegex.test(formData.phone.replace(/\s/g, ""))) {
+    newErrors.phone = "Enter a valid 10-digit phone";
+  }
+
+  // Clinic
+  if (!formData.clinicName.trim()) {
+    newErrors.clinicName = "Clinic name is required";
+  }
+
+  // Specialization
+  if (!formData.specialization) {
+    newErrors.specialization = "Select specialization";
+  }
+
+  // Experience (optional but validate if filled)
+  if (formData.experience && !/^\d+/.test(formData.experience)) {
+    newErrors.experience = "Enter valid experience";
+  }
+
+  setErrors(newErrors);
+
+  return Object.keys(newErrors).length === 0;
+};
+
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+
+          <Header goHome={goHome}/>
+
+
 
       {/* HERO */}
       <div className="booking-hero">
@@ -143,41 +191,78 @@ function Booking({ goHome }) {
               </p>
 
               <div className="grid">
-                <div className="field">
-                  <label>Full Name *</label>
-                  <input name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Dr. John Doe" />
-                </div>
 
-                <div className="field">
-                  <label>Email *</label>
-                  <input name="email" value={formData.email} onChange={handleChange} placeholder="john@clinic.com" />
-                </div>
+  <div className="field">
+    <label>Full Name *</label>
+    <input
+      name="fullName"
+      value={formData.fullName}
+      onChange={handleChange}
+      placeholder="Dr. John Doe"
+    />
+    {errors.fullName && <small style={{ color: "red" }}>{errors.fullName}</small>}
+  </div>
 
-                <div className="field">
-                  <label>Phone *</label>
-                  <input name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
-                </div>
+  <div className="field">
+    <label>Email *</label>
+    <input
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="john@clinic.com"
+    />
+    {errors.email && <small style={{ color: "red" }}>{errors.email}</small>}
+  </div>
 
-                <div className="field">
-                  <label>Clinic Name *</label>
-                  <input name="clinicName" value={formData.clinicName} onChange={handleChange} placeholder="City Care Hospital" />
-                </div>
+  <div className="field">
+    <label>Phone *</label>
+    <input
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="+91 98765 43210"
+    />
+    {errors.phone && <small style={{ color: "red" }}>{errors.phone}</small>}
+  </div>
 
-                <div className="field">
-                  <label>Specialization *</label>
-                  <select name="specialization" value={formData.specialization} onChange={handleChange}>
-                    <option value="">Select specialization</option>
-                    <option>General Physician</option>
-                    <option>Cardiologist</option>
-                    <option>Dermatologist</option>
-                  </select>
-                </div>
+  <div className="field">
+    <label>Clinic Name *</label>
+    <input
+      name="clinicName"
+      value={formData.clinicName}
+      onChange={handleChange}
+      placeholder="City Care Hospital"
+    />
+    {errors.clinicName && <small style={{ color: "red" }}>{errors.clinicName}</small>}
+  </div>
 
-                <div className="field">
-                  <label>Experience</label>
-                  <input name="experience" value={formData.experience} onChange={handleChange} placeholder="5 years" />
-                </div>
-              </div>
+  <div className="field">
+    <label>Specialization *</label>
+    <select
+      name="specialization"
+      value={formData.specialization}
+      onChange={handleChange}
+    >
+      <option value="">Select specialization</option>
+      <option>General Physician</option>
+      <option>Cardiologist</option>
+      <option>Dermatologist</option>
+    </select>
+    {errors.specialization && <small style={{ color: "red" }}>{errors.specialization}</small>}
+  </div>
+
+  <div className="field">
+    <label>Experience</label>
+    <input
+      name="experience"
+      value={formData.experience}
+      onChange={handleChange}
+      placeholder="5 years"
+    />
+    {errors.experience && <small style={{ color: "red" }}>{errors.experience}</small>}
+  </div>
+
+</div>
             </>
           )}
 
@@ -257,23 +342,28 @@ function Booking({ goHome }) {
           )}
 
           {/* STEP 4 */}
-          {step === 4 && (
-            <div className="confirmation">
-              <div className="check-circle">✔</div>
+        {step === 4 && (
+  <div className="confirmation">
+    <div className="check-circle">✔</div>
 
-              <h2>Payment Successful</h2>
-              <p>Your dashboard is now active.</p>
+    <h2>Payment Successful</h2>
+    <p>Your dashboard is now active.</p>
 
-              <div className="bill">
-                <p><strong>Plan:</strong> {plans[plan]?.name}</p>
-                <p><strong>Amount:</strong> {plans[plan]?.price}</p>
-              </div>
+    {/* ✅ NEW MESSAGE */}
+    <p style={{ marginTop: "8px", fontSize: "14px", color: "#555" }}>
+      Your login credentials have been sent to your registered email.
+    </p>
 
-              <button className="primary" onClick={goHome}>
-                Go to Dashboard
-              </button>
-            </div>
-          )}
+    <div className="bill">
+      <p><strong>Plan:</strong> {plans[plan]?.name}</p>
+      <p><strong>Amount:</strong> {plans[plan]?.price}</p>
+    </div>
+
+    <button className="primary" onClick={goHome}>
+      Go to Dashboard
+    </button>
+  </div>
+)}
 
           {/* ACTIONS */}
           {step !== 4 && (
@@ -283,17 +373,25 @@ function Booking({ goHome }) {
               <button
                 className="primary"
                 onClick={() => {
-                  if (step === 3) {
-                    setProcessing(true);
+                  
+                      if (step === 1) {
+    if (!validateStep1()) return;
+  }
 
-                    setTimeout(() => {
-                      submitToBackend(); // ✅ CONNECTED
-                      setProcessing(false);
-                    }, 1200);
+  if (step === 3) {
+    setProcessing(true);
 
-                  } else {
-                    next();
-                  }
+    setTimeout(() => {
+      submitToBackend();
+      setProcessing(false);
+    }, 1200);
+
+  } else {
+    next();
+  }
+
+
+
                 }}
               >
                 {processing ? "Processing..." : step === 3 ? "Confirm Payment" : "Continue"}

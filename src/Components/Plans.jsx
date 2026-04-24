@@ -3,7 +3,7 @@ import "./Plans.css";
 
 function Plans({ goToBooking }) {
   return (
-    <section className="plans2">
+    <section className="plans2" id="plans">
 
       <div className="plans2-header">
         <h2>

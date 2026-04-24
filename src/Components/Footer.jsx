@@ -1,16 +1,21 @@
 import React from "react";
 import "./Footer.css";
 // import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Stethoscope, User, Calendar } from "lucide-react";
 
-function Footer({ goToBooking }) {
+
+function Footer({ goToBooking, goHome }) {
   return (
     <footer className="footer">
 
       <div className="footer-container">
 
         {/* 🔹 BRAND */}
+        
         <div className="footer-col brand">
-          <h2>HOMEOSUITE</h2>
+                    
+
+          <h2> <Stethoscope size={22} className="logo-icon" />HOMEOSUITE </h2>
           <p>
             Redefining healthcare through technology. Bridging the gap between
             patients and professionals seamlessly.
@@ -34,13 +39,85 @@ function Footer({ goToBooking }) {
         {/* 🔹 QUICK LINKS */}
         <div className="footer-col">
           <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Pricing Plans</a></li>
-            <li><a href="#" onClick={(event) => { event.preventDefault(); goToBooking(); }}>Book Appointment</a></li>
-            <li><a href="#">Why Choose Us</a></li>
-          </ul>
+
+
+<ul>
+
+  <li>
+    <a
+      href="#home"
+      onClick={(e) => {
+        e.preventDefault();
+        goHome();
+        setTimeout(() => {
+          document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }}
+    >
+      Home
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#how"
+      onClick={(e) => {
+        e.preventDefault();
+        goHome();
+        setTimeout(() => {
+          document.getElementById("how")?.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }}
+    >
+      How It Works
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#plans"
+      onClick={(e) => {
+        e.preventDefault();
+        goHome();
+        setTimeout(() => {
+          document.getElementById("plans")?.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }}
+    >
+      Pricing Plans
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#"
+      onClick={(e) => {
+        e.preventDefault();
+        goToBooking();
+      }}
+    >
+      Book Appointment
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#why"
+      onClick={(e) => {
+        e.preventDefault();
+        goHome();
+        setTimeout(() => {
+          document.getElementById("why")?.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }}
+    >
+      Why Choose Us
+    </a>
+  </li>
+
+</ul>
+
+
         </div>
 
         {/* 🔹 SERVICES */}

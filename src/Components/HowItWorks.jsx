@@ -54,7 +54,7 @@ function HowItWorks() {
 
 return (
 
-  <section className="how">
+  <section className="how" id="how">
 
     {/* 🔹 HEADING */}
     <div className="how-header">

@@ -4,7 +4,7 @@ import { ShieldCheck, Clock, Users, Sparkles } from "lucide-react";
 
 function WhyUs() {
   return (
-    <section className="why">
+    <section className="why" id="why">
 
       <h2 className="why-title">
         Why Choose <span>Homeosuite</span>

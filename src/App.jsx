@@ -14,24 +14,25 @@ import Booking from "./Components/Booking";
 function App() {
   const [page, setPage] = useState("home");
   const goToBooking = () => setPage("booking");
+  const goHome = () => setPage("home")
 
   return (
     <div className="app">
 
       {page === "home" && (
         <>
-          <Header goToBooking={goToBooking} />
+          <Header goToBooking={goToBooking} goHome={goHome}/>
           <Hero goToBooking={goToBooking}/>
           <WhyUs />
           <HowItWorks />
           <Testimonials />
           <Plans goToBooking={goToBooking} />
-          <Footer goToBooking={goToBooking} />
+          <Footer goToBooking={goToBooking} goHome={goHome} />
         </>
       )}
 
       {page === "booking" && (
-        <Booking goHome={() => setPage("home")} />
+        <Booking goHome={goHome} />
       )}
 
     </div>
